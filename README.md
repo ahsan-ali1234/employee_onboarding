@@ -1,41 +1,31 @@
-### Employee Onboarding
+# Employee Onboarding – ERPNext Custom App
 
-Employee Onboarding
+## 📋 Overview
 
-### Installation
+This custom ERPNext app addresses a common pain point in mid-sized organizations: the lack of structured, automated, and role-based workflows for onboarding new employees. The app streamlines the onboarding process by dynamically assigning tasks, tracking asset needs, and enabling workflow-driven collaboration between IT, Admin, and HR departments.
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+---
+
+## 🎯 Objective
+
+To provide a centralized, automated, and dynamic onboarding workflow that:
+- Enhances inter-departmental visibility.
+- Automates asset allocation and procurement steps.
+- Adapts onboarding checklists based on job roles.
+
+---
+
+## 🚀 Installation
 
 ```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app employee_onboarding
-```
+# Go to your bench folder
+cd frappe-bench
 
-### Contributing
+# Get the app from GitHub
+bench get-app employee_onboarding https://github.com/ahsan-ali1234/employee_onboarding.git
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+# Install app on your site
+bench --site [your-site-name] install-app employee_onboarding
 
-```bash
-cd apps/employee_onboarding
-pre-commit install
-```
-
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
-
-### CI
-
-This app can use GitHub Actions for CI. The following workflows are configured:
-
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
-
-
-### License
-
-mit
+# Migrate to apply changes
+bench --site [your-site-name] migrate
